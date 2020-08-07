@@ -9,5 +9,10 @@ namespace PierresBakery.Models
             Amount = amount;
         }
 
+        public int TwoFor5Deal(){
+            int doubleDeals = Amount / 2;
+            return doubleDeals + (Amount - doubleDeals);
+        }
+
     }
 }
