@@ -13,7 +13,7 @@ namespace PierresBakery.Models
         public int TwoFor5Deal()
         {
             int doubleDeals = Amount / 2;
-            return (doubleDeals * SinglePrice) + ((Amount % 2 == 1) ? SinglePrice : 0); 
+            return (doubleDeals * SinglePrice) + ((Amount % 2) * SinglePrice); 
         }
 
     }

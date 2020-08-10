@@ -25,5 +25,16 @@ namespace PierresBakeryTests.ModelsTests
             int ar = b.TwoFor5Deal();
             Assert.AreEqual(er,ar);
         }
+
+        [TestMethod]
+        public void ThreeForFiveDeal()
+        {
+            //arrange
+            Pastry p = new Pastry(5);
+            int er = 9;
+            //act
+            int ar = p.ThreeFor5Deal();
+            Assert.AreEqual(er,ar);
+        }
     }
 }
