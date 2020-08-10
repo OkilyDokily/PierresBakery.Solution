@@ -5,13 +5,10 @@ namespace PierresBakery.Models
       
         public Pastry(int amount) 
         {
+            DealPrice = 5;
+            Multiplier = 3;
             SinglePrice = 2;
             Amount = amount;
-        }
-
-        public override int deal(){
-           int deal = Amount / 3;
-           return (deal * 5) + ((Amount % 3) * SinglePrice); 
         }
     }
 }

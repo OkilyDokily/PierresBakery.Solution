@@ -16,7 +16,7 @@ namespace PierresBakeryTests.ModelsTests
             Assert.AreEqual(true, ar);
         }
         [TestMethod]
-        public void TwoForFiveDeal()
+        public void TwoForFiveDeal_GetValueOfOrder_True()
         {
             //arrange
             Bread b = new Bread(5);
@@ -25,7 +25,5 @@ namespace PierresBakeryTests.ModelsTests
             int ar = b.deal();
             Assert.AreEqual(er,ar);
         }
-
-      
     }
 }
