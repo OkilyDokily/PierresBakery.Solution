@@ -7,7 +7,8 @@ namespace PierresBakeryTests.ModelsTests
     public class PastryTests
     {
         [TestMethod]
-        public void Constructor_EnsureConstructorWorks_True(){
+        public void Constructor_EnsureConstructorWorks_True()
+        {
             //arange
             Pastry p = new Pastry(5);
             //act

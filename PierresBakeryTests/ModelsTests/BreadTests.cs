@@ -7,7 +7,8 @@ namespace PierresBakeryTests.ModelsTests
     public class BreadTests
     {
         [TestMethod]
-        public void Constructor_EnsureConstructorWorks_True(){
+        public void Constructor_EnsureConstructorWorks_True()
+        {
             //arange
             Bread b = new Bread(5);
             //act
@@ -15,6 +16,14 @@ namespace PierresBakeryTests.ModelsTests
             Assert.AreEqual(true, ar);
         }
         [TestMethod]
-        public void Two
+        public void TwoForFiveDeal()
+        {
+            //arrange
+            Bread b = new Bread(5);
+            int er = 15;
+            //act
+            int ar = b.TwoFor5Deal();
+            Assert.AreEqual(er,ar);
+        }
     }
 }

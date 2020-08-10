@@ -4,14 +4,16 @@ namespace PierresBakery.Models
     {
         public int Amount{get;}
         public int SinglePrice{get;}
-        public Bread(int amount){
+        public Bread(int amount)
+        {
             SinglePrice = 5;
             Amount = amount;
         }
 
-        public int TwoFor5Deal(){
+        public int TwoFor5Deal()
+        {
             int doubleDeals = Amount / 2;
-            return doubleDeals + (Amount - doubleDeals);
+            return (doubleDeals * SinglePrice) + ((Amount % 2 == 1) ? SinglePrice : 0); 
         }
 
     }
