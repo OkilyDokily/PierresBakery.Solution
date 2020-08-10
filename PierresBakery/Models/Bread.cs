@@ -1,16 +1,15 @@
 namespace PierresBakery.Models
 {
-    public class Bread
+    public class Bread : BakeryItem
     {
-        public int Amount{get;}
-        public int SinglePrice{get;}
+       
         public Bread(int amount)
         {
             SinglePrice = 5;
             Amount = amount;
         }
 
-        public int TwoFor5Deal()
+        public override int deal()
         {
             int doubleDeals = Amount / 2;
             return (doubleDeals * SinglePrice) + ((Amount % 2) * SinglePrice); 
