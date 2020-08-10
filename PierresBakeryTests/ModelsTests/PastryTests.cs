@@ -15,5 +15,16 @@ namespace PierresBakeryTests.ModelsTests
             bool ar = p.SinglePrice == 2 && p.Amount == 5;
             Assert.AreEqual(true, ar);
         }
+
+          [TestMethod]
+        public void ThreeForFiveDeal()
+        {
+            //arrange
+            Pastry p = new Pastry(5);
+            int er = 9;
+            //act
+            int ar = p.deal();
+            Assert.AreEqual(er,ar);
+        }
     }
 }
