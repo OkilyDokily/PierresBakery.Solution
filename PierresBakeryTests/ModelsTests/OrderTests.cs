@@ -65,14 +65,14 @@ namespace PierresBakeryTests.ModelsTests
         }
 
         [TestMethod]
-        public void GetTotal_GetTotalOfOrdersWithSubclasses_True()
+        public void GetTotal_GetTotalOfOrdersWithSubclassesAndDeals_True()
         {
             //Arrange
-            int er = 36;
+            int er = 37;
             //Act
             Order.AddToOrder(new Cronut(5)); //9
-            Order.AddToOrder(new Brioche(6));  //15
-            Order.AddToOrder(new Croissant(7)); //12
+            Order.AddToOrder(new Brioche(7));  //18
+            Order.AddToOrder(new Croissant(7)); //9
             //
             Assert.AreEqual(er, Order.GetTotal());
         }

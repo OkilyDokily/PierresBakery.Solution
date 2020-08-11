@@ -4,7 +4,8 @@ namespace PierresBakery.Models
     {
         public Croissant(int num) : base(num)
         {
-
+            Multiplier = 4;
+            DealPrice = 5;
         }
     }
 }

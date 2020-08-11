@@ -4,7 +4,9 @@ namespace PierresBakery.Models
     {
         public Brioche(int num) : base(num)
         {
-           
+           Multiplier = 3;
+           DealPrice = 7; 
+           SinglePrice = 4;  
         }
     }
 }
