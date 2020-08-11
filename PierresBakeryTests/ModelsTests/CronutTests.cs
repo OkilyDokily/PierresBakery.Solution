@@ -6,6 +6,14 @@ namespace PierresBakeryTests.ModelsTests
     [TestClass]
     public class CronutTests
     {
-        
+        [TestMethod]
+        public void ImplementNew_EnsureObjectCreatedCorrectlyTrue()
+        {
+            //arrange
+            int er = 6;
+            //act
+            Cronut c = new Cronut(6);
+            Assert.AreEqual(er,c.Amount);
+        }
     }
 }

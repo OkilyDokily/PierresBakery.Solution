@@ -16,7 +16,7 @@ namespace PierresBakeryTests.ModelsTests
             Assert.AreEqual(true, ar);
         }
 
-          [TestMethod]
+        [TestMethod]
         public void ThreeForFiveDeal_GetValueOfOrder_True()
         {
             //arrange
