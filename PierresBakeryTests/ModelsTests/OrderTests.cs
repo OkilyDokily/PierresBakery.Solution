@@ -64,17 +64,17 @@ namespace PierresBakeryTests.ModelsTests
             CollectionAssert.AreEqual(er, Order.Orders);
         }
 
-        // [TestMethod]
-        // public void GetTotal_GetTotalOfOrdersWithSubclassesAndDeals_True()
-        // {
-        //     //Arrange
-        //     int er = 37;
-        //     //Act
-        //     Order.AddToOrder(new Cronut(5)); //9
-        //     Order.AddToOrder(new Brioche(7));  //18
-        //     Order.AddToOrder(new Croissant(7)); //9
-        //     //
-        //     Assert.AreEqual(er, Order.GetTotal());
-        // }
+        [TestMethod]
+        public void GetTotal_GetTotalOfOrdersWithSubclassesAndDeals_True()
+        {
+            //Arrange
+            int er = 38;
+            //Act
+            Order.AddToOrder(new Cronut(5)); //9
+            Order.AddToOrder(new Brioche(7));  //18
+            Order.AddToOrder(new Croissant(7)); //11
+            //
+            Assert.AreEqual(er, Order.GetTotal());
+        }
     }
 }
