@@ -26,7 +26,10 @@ _An imaginary bakery where the user can buy items_
 | Create an Order Class to hold bread and pastry orders |  |  |
 | Create a static AddToOrder method | Order.AddToOrder(new Pastry(5)) | static List<BreadItems> {new Pastry(5)} |
 | Create a static method that returns total from all order | Order.GetTotal() | 19 for ex. |
-
+| Create subclasses for Bread and Pastry |  |  |
+| ensure subobjects are created correctly  | new Brioche() | Brioche{contains bread properties} |
+| ensure subobjects can be added to orders | Order.AddToOrder(new Brioche(5)) | static List<BreadItems> {new Brioche(5)} |
+| ensure subobjects can yield GetTotal correctly | Order.GetTotal(new Brioche.. etc} | 36 for example |
 ## Known Bugs
 
 _I don't think there are any bugs but please tell me if you see any._

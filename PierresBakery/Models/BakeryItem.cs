@@ -7,17 +7,20 @@ namespace PierresBakery.Models
         public int Multiplier{get; set;}
         public int DealPrice{get; set;}
 
-        public int deal(){
+        public int Deal()
+        {
             int deal = Amount / Multiplier;
             return (deal * DealPrice) + ((Amount % Multiplier) * SinglePrice); 
         }
         //for testing purposes
-        public override bool Equals(object obj) {
+        public override bool Equals(object obj) 
+        {
             BakeryItem other = obj as BakeryItem;
-            if(other == null) {
+            if(other == null) 
+            {
                 return false;
             }
-            return (this.Amount == other.Amount);
+            return (this.Amount == other.Amount) && (this.GetType() == other.GetType());
         }
     }
 }
