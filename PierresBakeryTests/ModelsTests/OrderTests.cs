@@ -51,5 +51,30 @@ namespace PierresBakeryTests.ModelsTests
             //
             Assert.AreEqual(er, Order.GetTotal());
         }
+        [TestMethod]
+        public void AddToOrder_TestIfListHoldsOrderFromSubclasses_True()
+        {
+            //Arrange
+            List<BakeryItem> er = new List<BakeryItem>(){new Cronut(5), new Brioche(6), new Croissant(7)};
+            //Act
+            Order.AddToOrder(new Cronut(5)); //9
+            Order.AddToOrder(new Brioche(6));  //15
+            Order.AddToOrder(new Croissant(7)); //12
+            //
+            CollectionAssert.AreEqual(er, Order.Orders);
+        }
+
+        [TestMethod]
+        public void GetTotal_GetTotalOfOrdersWithSubclasses_True()
+        {
+            //Arrange
+            int er = 36;
+            //Act
+            Order.AddToOrder(new Cronut(5)); //9
+            Order.AddToOrder(new Brioche(6));  //15
+            Order.AddToOrder(new Croissant(7)); //12
+            //
+            Assert.AreEqual(er, Order.GetTotal());
+        }
     }
 }
