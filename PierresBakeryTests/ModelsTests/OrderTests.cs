@@ -35,5 +35,17 @@ namespace PierresBakeryTests.ModelsTests
             //
             CollectionAssert.AreNotEqual(er, Order.Orders);
         }
+
+         [TestMethod]
+          public void GetTotal_GetTotalOfOrders_True(){
+            //Arrange
+            int er = 36;
+            //Act
+            Order.AddToOrder(new Pastry(5)); //9
+            Order.AddToOrder(new Bread(6));  //15
+            Order.AddToOrder(new Pastry(7)); //12
+            //
+            Assert.AreEqual(er, Order.GetTotal());
+        }
     }
 }

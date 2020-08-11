@@ -22,7 +22,7 @@ namespace PierresBakeryTests.ModelsTests
             Bread b = new Bread(5);
             int er = 15;
             //act
-            int ar = b.deal();
+            int ar = b.Deal();
             Assert.AreEqual(er,ar);
         }
     }
