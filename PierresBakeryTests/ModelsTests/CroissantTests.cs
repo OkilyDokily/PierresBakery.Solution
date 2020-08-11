@@ -15,5 +15,15 @@ namespace PierresBakeryTests.ModelsTests
             Croissant c = new Croissant(6);
             Assert.AreEqual(er,c.Amount);
         }
+
+        public void Deal_FourForFive_True()
+        {
+            //arrange
+            Brioche b = new Brioche(5);
+            int er = 7;
+            //act
+            int ar = b.Deal();
+            Assert.AreEqual(er,ar);
+        }
     }
 }

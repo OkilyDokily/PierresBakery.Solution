@@ -17,7 +17,7 @@ namespace PierresBakeryTests.ModelsTests
         }
 
         [TestMethod]
-        public void ThreeForFiveDeal_GetValueOfOrder_True()
+        public void Deal_ThreeForFive_True()
         {
             //arrange
             Pastry p = new Pastry(5);
