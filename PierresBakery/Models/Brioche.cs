@@ -1,6 +1,6 @@
 namespace PierresBakery.Models
 {
-    public class Brioche : Bread
+    public class Brioche : Bread 
     {
         public Brioche(int num) : base(num)
         {

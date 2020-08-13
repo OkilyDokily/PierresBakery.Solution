@@ -1,16 +1,14 @@
 namespace PierresBakery.Models
 {
-    public class Bread : BakeryItem
+    public abstract class Bread : BakeryItem
     {
-        public Bread(int amount)
+
+        public Bread(int num) 
         {
+            Amount = num;
             Multiplier = 2;
             DealPrice = 5;
             SinglePrice = 5;
-            Amount = amount;
         }
-
-        
-
     }
 }

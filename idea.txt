@@ -1,0 +1,5 @@
+create a method that takes a generic subobject
+instantiates it and then calls the number of items in that object
+to get the total deal value for that object.
+
+create a method that goes over each subobject and then add each up

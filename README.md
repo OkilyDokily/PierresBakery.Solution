@@ -25,14 +25,13 @@ _An imaginary bakery where the user can buy items_
 | Dry up code by adding an inheritable BakeryItem class |  |  |
 | Create an Order Class to hold bread and pastry orders |  |  |
 | Create a static AddToOrder method | Order.AddToOrder(new Pastry(5)) | static List<BreadItems> {new Pastry(5)} |
-| Create a static method that returns total from all order | Order.GetTotal() | 19 for ex. |
-| Create subclasses for Bread and Pastry |  |  |
-| Create static values for each subclass to hold totals. |  |  |
+| Create subclasses for Bread and Pastry | new Brioche(),new Croissant etc | Brioche object etc |
 | ensure subobjects are created correctly  | new Brioche() | Brioche{contains bread properties} |
 | ensure subobjects can be added to orders | Order.AddToOrder(new Brioche(5)) | static List<BreadItems> {new Brioche(5)} |
-| ensure subobjects can yield GetTotal correctly | Order.GetTotal(new Brioche.. etc} | 36 for example |
 | Create a special 3 for 7 deal on Brioche with a default price of 4 | new Brioche(7).Deal() | 15 |
 | Create a special 4 for 5 on Croissants with same default price | new Croissant(9).Deal() | 12 |
+| create a generic method that takes a subobject such as Brioche and then calls the total | GetTotalValueOfOrderForAType<T>() | 56 for ex |
+| create a generic method that calls the previous method for each type based on a dictionary/list | GetTotals | 135 for ex |
 | Create a static method that tells how many items of each kind have been purchased | Order.GetItemizedNumbers() | 3 Pastries,  |
 ## Known Bugs
 
