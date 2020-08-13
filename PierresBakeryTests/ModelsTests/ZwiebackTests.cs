@@ -12,8 +12,8 @@ namespace PierresBakeryTests.ModelsTests
             //arrange
             int er = 6;
             //act
-            Zwieback z = new Zwieback(6);
-            Assert.AreEqual(er,z.Amount);
+            Zwieback z = new Zwieback();
+            Assert.AreEqual(er,);
         }
     }
 }

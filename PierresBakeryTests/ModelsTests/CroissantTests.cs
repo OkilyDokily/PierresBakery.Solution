@@ -12,14 +12,14 @@ namespace PierresBakeryTests.ModelsTests
               //arrange
             int er = 6;
             //act
-            Croissant c = new Croissant(6);
-            Assert.AreEqual(er,c.Amount);
+            Croissant c = new Croissant();
+            Assert.AreEqual(er,);
         }
 
         public void Deal_FourForFive_True()
         {
             //arrange
-            Brioche b = new Brioche(5);
+            Brioche b = new Brioche();
             int er = 7;
             //act
             int ar = b.Deal();

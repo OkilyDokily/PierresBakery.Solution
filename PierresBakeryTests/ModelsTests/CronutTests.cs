@@ -12,8 +12,8 @@ namespace PierresBakeryTests.ModelsTests
             //arrange
             int er = 6;
             //act
-            Cronut c = new Cronut(6);
-            Assert.AreEqual(er,c.Amount);
+            Cronut c = new Cronut();
+            Assert.AreEqual(er,);
         }
     }
 }
