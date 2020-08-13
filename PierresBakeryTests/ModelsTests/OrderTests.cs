@@ -15,7 +15,13 @@ namespace PierresBakeryTests.ModelsTests
         }
 
         [TestMethod]
-        
-    
+        public void AddToOrder_TestThatAmountsAreAddedProperly_True(){
+            //arrange
+            
+            //act
+            Order.AddToOrder("Brioche",5);
+            Order.AddToOrder("Croissant",10);
+        }
+
     }
 }
