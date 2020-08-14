@@ -6,21 +6,15 @@ namespace PierresBakeryTests.ModelsTests
 {
     [TestClass]
     public class CroissantTests {
-        //   [TestMethod] 
-        // public void ImplementAmountSetter_EnsureAmountsWorkTrue()
-        // {
-          
-           
-        // }
-
-        // public void Deal_FourForFive_True()
-        // {
-        //     //arrange
-        //     Brioche b = new Brioche();
-        //     int er = 7;
-        //     //act
-        //     int ar = b.Deal();
-        //     Assert.AreEqual(er,ar);
-        // }
+        [TestMethod]
+        public void Deal_FourForFive_True()
+        {
+            //arrange
+            Brioche b = new Brioche();
+            int er = 12;
+            //act
+            int ar = b.Deal(9);
+            Assert.AreEqual(er,ar);
+        }
     }
 }
