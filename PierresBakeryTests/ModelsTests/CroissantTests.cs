@@ -10,10 +10,10 @@ namespace PierresBakeryTests.ModelsTests
         public void Deal_FourForFive_True()
         {
             //arrange
-            Brioche b = new Brioche();
+            Croissant c = new Croissant();
             int er = 12;
             //act
-            int ar = b.Deal(9);
+            int ar = c.Deal(9);
             Assert.AreEqual(er,ar);
         }
     }
