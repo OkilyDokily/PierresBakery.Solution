@@ -5,23 +5,14 @@ using System;
 namespace PierresBakeryTests.ModelsTests
 {
     [TestClass]
-    public class BriocheTests : IDisposable
+    public class BriocheTests 
     {
-        public void Dispose(){
-            Brioche.Amount = 0; 
-        }
-        [TestMethod] 
-        public void ImplementAmountSetter_EnsureAmountsWorkTrue()
-        {
-            //arrange
-            int bakeryAmount = 20;
-            int breadAmount = 20;
-            //act
-            Brioche.Amount = 20;
-            
-            Assert.AreEqual(bakeryAmount, BakeryItem.Amount);
-            Assert.AreEqual(breadAmount, Bread.Amount);   
-        }
+       
+        // [TestMethod] 
+        // public void ImplementAmountSetter_EnsureAmountsWorkTrue()
+        // {
+             
+        // }
 
         // public void Deal_ThreeForSeven_True()
         // {

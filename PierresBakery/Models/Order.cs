@@ -4,7 +4,7 @@ using System;
 
 namespace PierresBakery.Models
 {
-    public class Order
+    public static class Order
     {
         public static List<Type> typeList = new List<Type>(){typeof(Brioche),typeof(Croissant),typeof(Cronut),typeof(Zwieback)}; 
         public static List<string> names = new List<string>{"Brioche","Zwieback","Cronut","Croissant"};
@@ -13,8 +13,5 @@ namespace PierresBakery.Models
         {
             ordersAmount[str] += num;
         }
-
-      
-
     }
 }
