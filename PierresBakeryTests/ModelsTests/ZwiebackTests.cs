@@ -7,10 +7,15 @@ namespace PierresBakeryTests.ModelsTests
 {
     [TestClass]
     public class ZwiebackTests{
-        // [TestMethod] 
-        // public void ImplementAmountSetter_EnsureAmountsWork_True()
-        // {
-      
-        // }
+       [TestMethod] 
+        public void Deal_EnsureDefaultDealWorks_True()
+        {
+            //arrange
+            int er = 20;
+            //act
+            int ar = (new Zwieback()).Deal(7);
+
+            Assert.AreEqual(er,ar);
+        }
     }
 }
