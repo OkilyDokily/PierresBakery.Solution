@@ -2,25 +2,20 @@ namespace PierresBakery.Models
 {
     public abstract class BakeryItem
     {
-        public int Amount{get; set;}
+        private static int _amount = 0;
+        public static int Amount {
+        get{return _amount;}    
+        set{
+            _amount = value;
+        }}
         public int SinglePrice{get; set;}
         public int Multiplier{get; set;}
         public int DealPrice{get; set;}
 
-        public int Deal()
+        public int Deal(int amount)
         {
-            int deal = Amount / Multiplier;
-            return (deal * DealPrice) + ((Amount % Multiplier) * SinglePrice); 
+            int deal = amount / Multiplier;
+            return (deal * DealPrice) + ((amount % Multiplier) * SinglePrice); 
         }
-        //for testing purposes
-        // public override bool Equals(object obj) 
-        // {
-        //     BakeryItem other = obj as BakeryItem;
-        //     if(other == null) 
-        //     {
-        //         return false;
-        //     }
-        //     return (this.amount == other.amount) && (this.GetType() == other.GetType());
-        // }
     }
 }

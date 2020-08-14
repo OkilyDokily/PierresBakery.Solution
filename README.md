@@ -13,14 +13,13 @@ _An imaginary bakery where the user can buy items_
 
                                   
 ## Setup/Installation Requirements
-
 | Spec | Input | Output |
 |-|-|-|
 | Dry up code by adding an inheritable abstract bakeryItem class that contains purely unimplemented properties and a deal method |  |  |
 | Create a bread and pastry class that are also abstract and pass default implementation to the BakerItem class via its constructor | Bread() |  |
-| Create a static AddToOrder method | Order.AddToOrder("Pastry", 5) | static Dictionary<string,int> {{pastry,5}} |
 | Create subclasses on Bread and Pastry such as Brioche | new Brioche(),new Croissant etc | Brioche object etc |
-| ensure subobjects are created correctly  | new Zwiebel() | Zwiebel{contains bread properties} |
+| create a static setter amount Setter on each subclass that calls its parents etc etc.  | Brioche.Amount = 5 Zwiebal.Amount= 5  | Bread.Amount = 10 |
+| ensure subobjects call Deal correctly on subobjects that utilize default implementation for bread and pastry | new Zwiebel().Deal(amount) | 37 for ex |
 | Create a special 3 for 7 deal on Brioche with a default price of 4 | new Brioche(7).Deal() | 15 |
 | Create a special 4 for 5 on Croissants with same default price | new Croissant(9).Deal() | 12 |
 | create a generic method that takes a subobject such as Brioche and then calls the total | GetTotalValueOfOrderForAType<T>() | 56 for ex |

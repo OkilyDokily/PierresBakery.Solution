@@ -1,29 +1,37 @@
 using PierresBakery.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace PierresBakeryTests.ModelsTests
 {
     [TestClass]
-    public class CroissantTests
+    public class CroissantTests : IDisposable
     {
-        [TestMethod]
-        public void ImplementNew_EnsureObjectCreatedCorrectlyTrue()
-        {
-              //arrange
-            int er = 6;
-            //act
-            Croissant c = new Croissant();
-            Assert.AreEqual(er,);
+        public void Dispose(){
+            Cronut.Amount = 0; 
         }
-
-        public void Deal_FourForFive_True()
+          [TestMethod] 
+        public void ImplementAmountSetter_EnsureAmountsWorkTrue()
         {
             //arrange
-            Brioche b = new Brioche();
-            int er = 7;
+            int bakeryAmount = 20;
+            int breadAmount = 20;
             //act
-            int ar = b.Deal();
-            Assert.AreEqual(er,ar);
+            Croissant.Amount = 20;
+            
+            Assert.AreEqual(bakeryAmount, BakeryItem.Amount);
+            Assert.AreEqual(breadAmount, Bread.Amount);
+           
         }
+
+        // public void Deal_FourForFive_True()
+        // {
+        //     //arrange
+        //     Brioche b = new Brioche();
+        //     int er = 7;
+        //     //act
+        //     int ar = b.Deal();
+        //     Assert.AreEqual(er,ar);
+        // }
     }
 }

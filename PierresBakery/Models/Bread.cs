@@ -2,10 +2,15 @@ namespace PierresBakery.Models
 {
     public abstract class Bread : BakeryItem
     {
-
-        public Bread(int num) 
+        private static int _amount = 0;
+        public new static int Amount {
+        get{return _amount;}    
+        set{
+            BakeryItem.Amount = value;
+            _amount = value;
+        }}
+        public Bread() 
         {
-            Amount = num;
             Multiplier = 2;
             DealPrice = 5;
             SinglePrice = 5;

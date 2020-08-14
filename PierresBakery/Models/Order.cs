@@ -6,22 +6,15 @@ namespace PierresBakery.Models
 {
     public class Order
     {
-        public static Dictionary<Type,string> typeList = new Dictionary<Type,string>(){{typeof(Brioche),"Brioche"},{typeof(Croissant),"Croissant"},{typeof(Cronut), "Cronut"},{typeof(Zwieback),"Zwieback"}}; 
-        public static List<BakeryItem> Orders = new List<BakeryItem>();
-        public static void AddToOrder(BakeryItem item)
+        public static List<Type> typeList = new List<Type>(){typeof(Brioche),typeof(Croissant),typeof(Cronut),typeof(Zwieback)}; 
+        public static List<string> names = new List<string>{"Brioche","Zwieback","Cronut","Croissant"};
+        public static Dictionary<string,int> ordersAmount = new Dictionary<string,int>(){{"Brioche",0},{"Zwieback",0},{"Cronut", 0},{"Croissant",0}}; 
+        public static void AddToOrder(string str, int num)
         {
-            Orders.Add(item);
+            ordersAmount[str] += num;
         }
 
-        public static int GetTotalNumberOfAType(List<BakeryItem> list)
-        {
-            return list.Sum(item => item.Amount);   
-        }
+      
 
-        public static int GetTotalValueOfOrdersForAType<T>(int total) where T : BakeryItem{
-            //https://stackoverflow.com/questions/731452/create-instance-of-generic-type-whose-constructor-requires-a-parameter
-            T item = (T)Activator.CreateInstance(typeof(T), new object[] { total });
-            return item.Deal();
-        }
     }
 }
