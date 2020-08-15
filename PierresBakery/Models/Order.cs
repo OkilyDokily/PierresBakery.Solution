@@ -10,6 +10,7 @@ namespace PierresBakery.Models
         public static List<string> names = new List<string>{"Brioche","Zwieback","Cronut","Croissant"};
         public static Dictionary<string,int> ordersAmount = new Dictionary<string,int>(){{"Brioche",0},{"Zwieback",0},{"Cronut", 0},{"Croissant",0}};
         public static Dictionary<string,int> categoryAmount = new Dictionary<string, int>(){{"Bread",0},{"Pastry",0}};
+        public static Dictionary<string,int> categoryTotal = new Dictionary<string, int>(){{"Bread",0},{"Pastry",0}};
         public static Dictionary<string,int> totals = new Dictionary<string,int>();  
         public static void AddToOrder(string str, int num)
         {
@@ -27,6 +28,8 @@ namespace PierresBakery.Models
                if(ordersAmount[key] > 0){
                     result = bakery.Deal(ordersAmount[key]);
                     totals.Add(key,result);
+                    string category = objectDictionary[key].Category;
+                    categoryTotal[category] += result;
                }
            }
         }

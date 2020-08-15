@@ -21,6 +21,13 @@ namespace PierresBakeryTests.ModelsTests
             {
                 Order.categoryAmount[str] = 0;
             }
+            List<string> keys3 = new List<string>(Order.categoryTotal.Keys);
+            foreach (string str in keys3)
+            {
+                Order.categoryTotal[str] = 0;
+            }
+
+            Order.totals.Clear();
         } 
 
         [TestMethod]
@@ -45,6 +52,20 @@ namespace PierresBakeryTests.ModelsTests
             Order.GetTotalsForAllOrder();
             
             CollectionAssert.AreEqual(er,Order.totals);
+        }
+
+          [TestMethod]
+        public void  GetTotalsForAllOrder_TestThatCategoryTotalsAreAddedCorrectly_True(){
+            //arrange
+            Dictionary<string,int> er = new Dictionary<string,int>{{"Bread",30},{"Pastry",16}};
+            //act
+            Order.AddToOrder("Brioche",5); //15
+            Order.AddToOrder("Zwieback",5);//15
+            Order.AddToOrder("Croissant",5);//7
+            Order.AddToOrder("Cronut",5);//9
+            Order.GetTotalsForAllOrder();
+          
+            CollectionAssert.AreEqual(er,Order.categoryTotal);
         }
 
 
