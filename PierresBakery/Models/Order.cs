@@ -23,12 +23,12 @@ namespace PierresBakery.Models
           return objectDictionary[str].Deal(ordersAmount[str]);
         }
 
-        // public static void GenericTotalMethodForDeals(){
-        //    foreach(KeyValuePair<string,Type> entry in typeDictionary.ToList()){
-        //        string key = entry.Key;
-        //        Type type = typeDictionary[key];
-        //        GenericTotalMethodForDeals<typeof(type)>();
-        //    }
-        // }
+        public static void GetTotalsForAllOrder(){
+           foreach(KeyValuePair<string,BakeryItem> entry in objectDictionary.ToList()){
+               string key = entry.Key;
+               int result = objectDictionary[key].Deal(ordersAmount[key]);
+               totals.Add(key,result);
+           }
+        }
     }
 }
