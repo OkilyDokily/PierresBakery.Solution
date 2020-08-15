@@ -9,7 +9,7 @@
 | ensure subobjects call Deal correctly on subobjects that utilize default implementation for bread and pastry | new Zwiebel().Deal(amount) | 37 for ex |
 | Create a special 3 for 7 deal on Brioche with a default price of 4 | new Brioche(7).Deal() | 15 |
 | Create a special 4 for 5 on Croissants with same default price | new Croissant(9).Deal() | 12 |
-| create a generic method that takes a subobject such as Brioche and then calls the total | GetTotalValueOfOrderForAType<T>() | 56 for ex |
+| create a method that takes a string and then calls the deal method on the corresponding object | GetTotalValueOfOrder(string str) | 56 for ex |
 | create a  method that calls the previous method for each type based on a dictionary/list | GetTotals | 135 for ex |
 | Create a static method that tells how many items of each kind have been purchased | Order.GetItemizedNumbers() | 3 Pastries,  |
 #### _This demonstrates beginner level C# and unit testing._
