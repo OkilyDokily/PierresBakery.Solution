@@ -2,6 +2,7 @@ namespace PierresBakery.Models
 {
     public abstract class BakeryItem
     {
+        public string Category{get; set;}
         public int SinglePrice{get; set;}
         public int Multiplier{get; set;}
         public int DealPrice{get; set;}

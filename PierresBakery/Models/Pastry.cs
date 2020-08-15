@@ -4,6 +4,7 @@ namespace PierresBakery.Models
     { 
         public Pastry()
         {
+            Category = "Pastry";
             DealPrice = 5;
             Multiplier = 3;
             SinglePrice = 2; 
