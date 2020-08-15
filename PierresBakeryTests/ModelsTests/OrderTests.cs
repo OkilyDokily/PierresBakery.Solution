@@ -31,13 +31,14 @@ namespace PierresBakeryTests.ModelsTests
 
 
         [TestMethod]
-        public void  CallDealMethodWithString_TestThatDealReturnsCorrectly_True(){
+        public void  GetTotalsForAllOrder_TestThatDealsReturnCorrectly_True(){
             //arrange
-            int er = 7;
+            Dictionary<string,int> er = new Dictionary<string,int>{{"Brioche",15},{"Croissant",7}};
+            //act
+            Order.AddToOrder("Brioche",5);
             Order.AddToOrder("Croissant",5);
-            int ar = Order.CallDealMethodWithString("Croissant");
-            
-            Assert.AreEqual(er,ar);
+            Order.GetTotalsForAllOrder();
+            CollectionAssert.AreEqual(er,Order.totals);
         }
     }
 }
