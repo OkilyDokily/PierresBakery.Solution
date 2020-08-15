@@ -6,7 +6,7 @@ namespace PierresBakery.Models
 {
     public static class Order
     {
-        public static Dictionary<string, BakeryItem> typeDictionary = new Dictionary<string,BakeryItem>(){{"Brioche", new Brioche()},{"Zwieback",new Zwieback()},{"Cronunt",new Cronut()},{"Croissant",new Croissant()}}; 
+        public static Dictionary<string, BakeryItem> objectDictionary = new Dictionary<string,BakeryItem>(){{"Brioche", new Brioche()},{"Zwieback",new Zwieback()},{"Cronunt",new Cronut()},{"Croissant",new Croissant()}}; 
 
         public static Dictionary<Type,string> typeStrDictionary = new Dictionary<Type,string>(){{typeof(Brioche),"Brioche"},{typeof(Zwieback),"Zwieback"},{typeof(Cronut),"Cronunt"},{typeof(Croissant),"Croissant"}}; 
         public static List<string> names = new List<string>{"Brioche","Zwieback","Cronut","Croissant"};
@@ -18,16 +18,17 @@ namespace PierresBakery.Models
             ordersAmount[str] += num;
         }
 
-        public static int GenericTotalMethodForDeals(string str)(){
-           
+        public static int CallDealMethodWithString(string str)
+        {
+          return objectDictionary[str].Deal(ordersAmount[str]);
         }
 
-        public static void GenericTotalMethodForDeals(){
-           foreach(KeyValuePair<string,Type> entry in typeDictionary.ToList()){
-               string key = entry.Key;
-               Type type = typeDictionary[key];
-               GenericTotalMethodForDeals<typeof(type)>();
-           }
-        }
+        // public static void GenericTotalMethodForDeals(){
+        //    foreach(KeyValuePair<string,Type> entry in typeDictionary.ToList()){
+        //        string key = entry.Key;
+        //        Type type = typeDictionary[key];
+        //        GenericTotalMethodForDeals<typeof(type)>();
+        //    }
+        // }
     }
 }
