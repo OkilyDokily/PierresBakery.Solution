@@ -7,22 +7,15 @@ namespace PierresBakery.Models
     public static class Order
     {
         public static Dictionary<string, BakeryItem> objectDictionary = new Dictionary<string,BakeryItem>(){{"Brioche", new Brioche()},{"Zwieback",new Zwieback()},{"Cronut",new Cronut()},{"Croissant",new Croissant()}}; 
-        public static List<string> names = new List<string>{"Brioche","Zwieback","Cronut","Croissant"};
+      
         public static Dictionary<string,int> ordersAmount = new Dictionary<string,int>(){{"Brioche",0},{"Zwieback",0},{"Cronut", 0},{"Croissant",0}};
-        public static Dictionary<string,int> categoryAmount = new Dictionary<string, int>(){{"Bread",0},{"Pastry",0}};
-        
-        // public static Dictionary<string,List<string>> getItemsNamesAndCategories(){
-
-        // }
-
-
+      
         public static void AddToOrder(string str, int num)
         {
-            ordersAmount[str] += num;
-            string category = objectDictionary[str].Category;
-            categoryAmount[category] += num;    
+            ordersAmount[str] += num;  
         }
         
+
         public static Dictionary<string, Dictionary<string,int[]>> GetTotalsForAllOrder(){
             Dictionary<string,Dictionary<string,int[]>> totals = new Dictionary<string,Dictionary<string,int[]>>();  
             
@@ -42,11 +35,12 @@ namespace PierresBakery.Models
                     string category = objectDictionary[key].Category;
                     if(!totals.ContainsKey(category))
                     {
-                        int[] catArr = new int[]{categoryAmount[category],0};
+                        int[] catArr = new int[]{0,0};
                         Dictionary<string,int[]> ofCategory = new Dictionary<string, int[]>(){{category, catArr}};
                         
                         totals.Add(category,ofCategory);   
                     }
+                    totals[category][category][0] += amount;
                     totals[category][category][1] += total; 
                     totals[category].Add(key, arr);    
                 }
