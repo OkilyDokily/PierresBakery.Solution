@@ -10,6 +10,7 @@
 | Create a special 3 for 7 deal on Brioche with a default price of 4 | new Brioche(7).Deal() | 15 |
 | Create a special 4 for 5 on Croissants with same default price | new Croissant(9).Deal() | 12 |
 | Create a static method that returns a dictionary for each category and a corresponding dictionary for each item in that category that includes the amount ordered and the deal for each item. | getTotalsForAllOrder() | Dictionary{"Bread",Dictionary{"Brioche",[10,23]},{Zwieback, [5, 15},},{"Pastry", Dictionary{"Croissant",[5,16]}} |
+| Create a static method that return each available item inside of its category | getItemNamesAndCategories() | Dictionary{{"Bread", List{Brioche,Zwieback}}, {"Pastry", List{"Cronut","Croissant"}}} |
 #### _This demonstrates beginner level C# and unit testing._
 
 #### By _**Matthew**_

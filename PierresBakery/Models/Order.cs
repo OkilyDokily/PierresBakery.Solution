@@ -11,6 +11,11 @@ namespace PierresBakery.Models
         public static Dictionary<string,int> ordersAmount = new Dictionary<string,int>(){{"Brioche",0},{"Zwieback",0},{"Cronut", 0},{"Croissant",0}};
         public static Dictionary<string,int> categoryAmount = new Dictionary<string, int>(){{"Bread",0},{"Pastry",0}};
         
+        // public static Dictionary<string,List<string>> getItemsNamesAndCategories(){
+
+        // }
+
+
         public static void AddToOrder(string str, int num)
         {
             ordersAmount[str] += num;
