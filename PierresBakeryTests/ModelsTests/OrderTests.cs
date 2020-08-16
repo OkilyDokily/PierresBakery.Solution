@@ -12,18 +12,14 @@ namespace PierresBakeryTests.ModelsTests
     {
         public void Dispose()
         {
-            List<string> keys = new List<string>(Order.ordersAmount.Keys);
-            foreach(String str in keys)
-            {
-                Order.ordersAmount[str] = 0;
-            }
+           Order.ordersAmount = new Dictionary<string,int>(); 
         } 
 
         [TestMethod]
         public void AddToOrder_TestThatAmountsAreAddedProperly_True()
         {
             //arrange
-            Dictionary<string,int> er = new Dictionary<string,int>(){{"Brioche",5},{"Zwieback",0},{"Cronut", 0},{"Croissant",5}}; 
+            Dictionary<string,int> er = new Dictionary<string,int>(){{"Brioche",5},{"Croissant",5}}; 
             //act
             Order.AddToOrder("Brioche",5);
             Order.AddToOrder("Croissant",5);
@@ -75,6 +71,11 @@ namespace PierresBakeryTests.ModelsTests
             Order.AddToOrder("Brioche",5);
             int aLength = Order.GetTotalsForAllOrder().Count;
             
+            foreach(KeyValuePair<string,Dictionary<string,int[]>> item in Order.GetTotalsForAllOrder().ToList())
+            {
+                Console.WriteLine(item.Key);
+            }
+
             Assert.AreEqual(eLength,aLength);
         }
 

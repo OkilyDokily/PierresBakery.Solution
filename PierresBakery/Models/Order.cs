@@ -8,11 +8,20 @@ namespace PierresBakery.Models
     {
         public static Dictionary<string, BakeryItem> objectDictionary = new Dictionary<string,BakeryItem>(){{"Brioche", new Brioche()},{"Zwieback",new Zwieback()},{"Cronut",new Cronut()},{"Croissant",new Croissant()}}; 
       
-        public static Dictionary<string,int> ordersAmount = new Dictionary<string,int>(){{"Brioche",0},{"Zwieback",0},{"Cronut", 0},{"Croissant",0}};
+        public static Dictionary<string,int> ordersAmount = new Dictionary<string,int>();
       
         public static void AddToOrder(string str, int num)
         {
-            ordersAmount[str] += num;  
+            if (objectDictionary.ContainsKey(str))
+            {
+                if(ordersAmount.ContainsKey(str))
+                {
+                    ordersAmount[str] += num; 
+                }
+                else{
+                    ordersAmount.Add(str, num);
+                }
+            }
         }
         
 
@@ -25,10 +34,10 @@ namespace PierresBakery.Models
                 int total = 0;
                 int[] arr = new int[2];
                 BakeryItem bakery = objectDictionary[key];
-                if(ordersAmount[key] > 0)
+                if(ordersAmount.ContainsKey(key))
                 {
                     amount = ordersAmount[key];
-                    total = bakery.Deal(ordersAmount[key]);
+                    total = bakery.Deal(amount);
                     arr[0] = amount;
                     arr[1] = total;
                     
