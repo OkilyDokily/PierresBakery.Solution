@@ -9,9 +9,7 @@
 | ensure subobjects call Deal correctly on subobjects that utilize default implementation for bread and pastry | new Zwiebel().Deal(amount) | 37 for ex |
 | Create a special 3 for 7 deal on Brioche with a default price of 4 | new Brioche(7).Deal() | 15 |
 | Create a special 4 for 5 on Croissants with same default price | new Croissant(9).Deal() | 12 |
-| create a method that adds the totals of purchased items to the totals dictionary | GetTotalsForAllOrder() | for ex. totals{{"brioche", 34},{ "Croissant, 17}} |
-| Create a static method that tells how many items of each kind have been purchased | Order.AddOrder("croissant", 3) | 3 Pastries,  |
-| create a static method that tells how much the bill is for each category | GetTotalsForAllOrder() | ex .Dictionary<string,int>{{"Bread",165},{"Pastry",100}}  |
+| Create a static method that returns a dictionary for each category and a corresponding dictionary for each item in that category that includes the amount ordered and the deal for each item. | getTotalsForAllOrder() | Dictionary{"Bread",Dictionary{"Brioche",[10,23]},{Zwieback, [5, 15},},{"Pastry", Dictionary{"Croissant",[5,16]}} |
 #### _This demonstrates beginner level C# and unit testing._
 
 #### By _**Matthew**_
