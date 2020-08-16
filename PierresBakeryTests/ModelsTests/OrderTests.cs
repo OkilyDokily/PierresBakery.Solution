@@ -10,7 +10,8 @@ namespace PierresBakeryTests.ModelsTests
     public class OrderTests 
     : IDisposable
     {
-        public void Dispose(){
+        public void Dispose()
+        {
             List<string> keys = new List<string>(Order.ordersAmount.Keys);
             foreach(String str in keys)
             {
@@ -24,7 +25,8 @@ namespace PierresBakeryTests.ModelsTests
         } 
 
         [TestMethod]
-        public void AddToOrder_TestThatAmountsAreAddedProperly_True(){
+        public void AddToOrder_TestThatAmountsAreAddedProperly_True()
+        {
             //arrange
             Dictionary<string,int> er = new Dictionary<string,int>(){{"Brioche",5},{"Zwieback",0},{"Cronut", 0},{"Croissant",5}}; 
             //act
@@ -36,7 +38,8 @@ namespace PierresBakeryTests.ModelsTests
 
 
         [TestMethod]
-        public void  GetTotalsForAllOrder_TestThatDealsReturnCorrectly_True(){
+        public void GetTotalsForAllOrder_TestThatDealsReturnCorrectly_True()
+        {
             //arrange
             int eBriocheTotal = 15;
             int eCroissantTotal = 7;
@@ -50,12 +53,43 @@ namespace PierresBakeryTests.ModelsTests
             Assert.AreEqual(true, eBriocheTotal == aBriocheTotal && eCroissantTotal == aCroissantTotal);
         }
 
+         [TestMethod]
+        public void GetTotalsForAllOrder_TestThatLengthOfCategoryDictionaryIsCorrect_True()
+        {
+            //arrange
+            int eBreadLength = 2;
+            int ePastryLength = 2;
+            
+            //act
+            Order.AddToOrder("Brioche",5);
+            Order.AddToOrder("Croissant",5);
+
+            int aBreadLength = Order.GetTotalsForAllOrder()["Bread"].Count;
+            int aPastryLength = Order.GetTotalsForAllOrder()["Pastry"].Count;
+
+            Assert.AreEqual(true, eBreadLength== aBreadLength && ePastryLength == aPastryLength);
+        }
+
+        [TestMethod]
+        public void GetTotalsForAllOrder_TestThatLengthOfOverallDictionaryIsCorrect_True()
+        {
+            //arrange
+            int eLength = 1;
+            
+            //act
+            Order.AddToOrder("Brioche",5);
+            int aLength = Order.GetTotalsForAllOrder().Count;
+            
+            Assert.AreEqual(eLength,aLength);
+        }
+
           [TestMethod]
-        public void  GetTotalsForAllOrder_TestThatCategoryTotalsAreAddedCorrectly_True(){
+        public void GetTotalsForAllOrder_TestThatCategoryTotalsAreAddedCorrectly_True()
+        {
             //arrange
             int eBreadTotal =  30;
             int ePastryTotal = 16;
-            //Dictionary<string,int> er = new Dictionary<string,int>{{"Bread",30},{"Pastry",16}};
+
             //act
             Order.AddToOrder("Brioche",5); //15
             Order.AddToOrder("Zwieback",5);//15
@@ -70,7 +104,8 @@ namespace PierresBakeryTests.ModelsTests
 
 
          [TestMethod]
-        public void  AddToOrder_GetTotalsOfItemsForEachCategory_True(){
+        public void AddToOrder_GetTotalsOfItemsForEachCategory_True()
+        {
             //arrange
             Dictionary<string,int> er = new Dictionary<string,int>{{"Bread",10},{"Pastry",10}};
             //act
