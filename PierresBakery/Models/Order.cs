@@ -10,6 +10,25 @@ namespace PierresBakery.Models
       
         public static Dictionary<string,int> ordersAmount = new Dictionary<string,int>();
       
+
+        public static Dictionary<string,Dictionary<string,int[]>> CreateItemsMenu(){
+            Dictionary<string,Dictionary<string,int[]>> itemsMenu = new Dictionary<string, Dictionary<string, int[]>>();
+            foreach(KeyValuePair<string,BakeryItem> item in objectDictionary.ToList()){
+                int singlePrice = objectDictionary[item.Key].SinglePrice;
+                int dealPrice = objectDictionary[item.Key].DealPrice;
+                int multiplier = objectDictionary[item.Key].Multiplier;
+                string category = objectDictionary[item.Key].Category;
+                int[] arr = {singlePrice,dealPrice,multiplier};
+               
+                if(!itemsMenu.ContainsKey(category)){
+                    Dictionary<string,int[]> items = new Dictionary<string,int[]>();
+                    itemsMenu.Add(category,items);
+                }
+                itemsMenu[category].Add(item.Key,arr);
+            }
+            return itemsMenu;
+        } 
+
         public static void AddToOrder(string str, int num)
         {
             if (objectDictionary.ContainsKey(str))

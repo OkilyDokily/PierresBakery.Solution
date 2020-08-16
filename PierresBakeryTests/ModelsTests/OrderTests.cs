@@ -79,7 +79,7 @@ namespace PierresBakeryTests.ModelsTests
             Assert.AreEqual(eLength,aLength);
         }
 
-          [TestMethod]
+        [TestMethod]
         public void GetTotalsForAllOrder_TestThatCategoryTotalsAreAddedCorrectly_True()
         {
             //arrange
@@ -96,6 +96,36 @@ namespace PierresBakeryTests.ModelsTests
             int aPastryTotal = Order.GetTotalsForAllOrder()["Pastry"]["Pastry"][1];
           
             Assert.AreEqual(true, eBreadTotal == aBreadTotal && ePastryTotal == aPastryTotal);
+        }
+
+        [TestMethod]
+        public void CreateItemsMenu_CheckIfDictionaryCountIsCorrect_True(){
+            //arrange
+            int er = 2;
+
+            //act
+            int ar = Order.CreateItemsMenu().Count;
+            Assert.AreEqual(er,ar);
+        }
+        [TestMethod]
+        public void CreateItemsMenu_CheckIfPastryAndBreadCountIsCorrect_True(){
+            //arrange
+            int er = 2;
+
+            //act
+            int ar = Order.CreateItemsMenu()["Bread"].Count;
+            int ar2 = Order.CreateItemsMenu()["Pastry"].Count;
+            Assert.AreEqual(true,ar == er && ar2 == er);
+        }
+        [TestMethod]
+        public void CreateItemsMenu_CheckIfBriocheArrayIsCorrect_True(){
+            //arrange
+            int[] er = {4,7,3};
+            
+            //act
+            int[] ar = Order.CreateItemsMenu()["Bread"]["Brioche"];
+            
+            CollectionAssert.AreEqual(er,ar);
         }
 
     }
