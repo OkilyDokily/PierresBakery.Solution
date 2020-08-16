@@ -38,27 +38,34 @@ namespace PierresBakeryTests.ModelsTests
         [TestMethod]
         public void  GetTotalsForAllOrder_TestThatDealsReturnCorrectly_True(){
             //arrange
-            Dictionary<string,int> er = new Dictionary<string,int>{{"Brioche",15},{"Croissant",7}};
+            int eBriocheTotal = 15;
+            int eCroissantTotal = 7;
+            
             //act
             Order.AddToOrder("Brioche",5);
             Order.AddToOrder("Croissant",5);
-            Dictionary<string, int> ar = Order.GetTotalsForAllOrder()[1];
-            
-            CollectionAssert.AreEqual(er,ar);
+            int aBriocheTotal = Order.GetTotalsForAllOrder()["Bread"]["Brioche"][1];
+            int aCroissantTotal = Order.GetTotalsForAllOrder()["Pastry"]["Croissant"][1];
+
+            Assert.AreEqual(true, eBriocheTotal == aBriocheTotal && eCroissantTotal == aCroissantTotal);
         }
 
           [TestMethod]
         public void  GetTotalsForAllOrder_TestThatCategoryTotalsAreAddedCorrectly_True(){
             //arrange
-            Dictionary<string,int> er = new Dictionary<string,int>{{"Bread",30},{"Pastry",16}};
+            int eBreadTotal =  30;
+            int ePastryTotal = 16;
+            //Dictionary<string,int> er = new Dictionary<string,int>{{"Bread",30},{"Pastry",16}};
             //act
             Order.AddToOrder("Brioche",5); //15
             Order.AddToOrder("Zwieback",5);//15
             Order.AddToOrder("Croissant",5);//7
             Order.AddToOrder("Cronut",5);//9
-            Dictionary<string,int> ar = Order.GetTotalsForAllOrder()[0];
+            
+            int aBreadTotal = Order.GetTotalsForAllOrder()["Bread"]["Bread"][1];
+            int aPastryTotal = Order.GetTotalsForAllOrder()["Pastry"]["Pastry"][1];
           
-            CollectionAssert.AreEqual(er,ar);
+            Assert.AreEqual(true, eBreadTotal == aBreadTotal && ePastryTotal == aPastryTotal);
         }
 
 
