@@ -14,6 +14,7 @@ namespace PierresBakeryTests.ModelsTests
             int er = 12;
             //act
             int ar = c.Deal(9);
+            
             Assert.AreEqual(er,ar);
         }
     }

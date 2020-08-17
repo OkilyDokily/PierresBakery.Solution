@@ -44,7 +44,7 @@ namespace PierresBakeryTests.ModelsTests
             Assert.AreEqual(true, eBriocheTotal == aBriocheTotal && eCroissantTotal == aCroissantTotal);
         }
 
-         [TestMethod]
+        [TestMethod]
         public void GetTotalsForAllOrder_TestThatLengthOfCategoryDictionaryIsCorrect_True()
         {
             //arrange
