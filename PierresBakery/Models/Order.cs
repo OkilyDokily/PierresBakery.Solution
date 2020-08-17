@@ -94,6 +94,5 @@ namespace PierresBakery.Models
             }
             return totals;
         }
-
     }
 }
