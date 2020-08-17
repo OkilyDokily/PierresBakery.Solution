@@ -67,20 +67,18 @@ namespace PierresBakery
             {
                 totalAmount += entry.Value[entry.Key][0];
                 totalValue += entry.Value[entry.Key][1];
-                Console.WriteLine();
                 Console.WriteLine("You purchased " + entry.Value[entry.Key][0] + " " + entry.Key + " items for a total value of " + entry.Value[entry.Key][1] + ".");
-                Console.WriteLine("Your itemized " + entry.Key + " purchases are as follows.");
-                Console.WriteLine("--------");
-                Console.WriteLine();
+                Console.WriteLine("Your itemized " + entry.Key + " purchases are as follows:");
+                
+               
                 foreach(KeyValuePair<string,int[]> item in entry.Value)
                 {
                     if(!(item.Key == entry.Key))
                     {
-                        Console.WriteLine("You purchased " + item.Value[0] + " " + item.Key + " items for " + item.Value[1] + " dollars." );
+                        Console.WriteLine("      You purchased " + item.Value[0] + " " + item.Key + " items for " + item.Value[1] + " dollars." );
                     }
                     
                 }
-                Console.WriteLine("--------------------")
             }
             Console.WriteLine("----------------------------");
             Console.WriteLine("You ordered " + totalAmount +" items in total.");
