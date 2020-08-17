@@ -23,7 +23,9 @@ _An imaginary bakery where the user can buy items_
 
 ## Setup/Installation Requirements
 * Install dotnet core from https://dotnet.microsoft.com/download
-* Clone/download the repo and type 'dotnet restore' inside of a terminal windows in the same directory of the cloned repo. 
+* Clone/download the repo
+* Navigate to the PierresBakery folder
+* type 'dotnet restore'
 * Run "dotnet run" to open the program
 * Follow the instructions within the app
 ## Known Bugs
