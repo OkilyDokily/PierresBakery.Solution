@@ -12,8 +12,8 @@ namespace PierresBakery.Models
 
         //This method returns a nested dictionary that can be looped through by the ui
         //code. The outer dictionary contains the names of the categories and the inner dictionary
-        // includes the names of items specific to a category which correspon to an int array that
-        // includes how many the cost of a single items and the number of items that corresponds to
+        // includes the names of items specific to a category which correspond to an int array that
+        // includes cost of a single items and the number of items that corresponds to
         // a particular deal price.
         public static Dictionary<string,Dictionary<string,int[]>> CreateItemsMenu()
         {

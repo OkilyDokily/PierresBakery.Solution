@@ -1,5 +1,14 @@
 
 # _Pierre's Bakery_
+#### _This demonstrates beginner level C# and unit testing._
+
+#### By _**Matthew**_
+
+## Description
+_A page demonstrates basic C# with a console._
+_An imaginary bakery where the user can buy items_
+                              
+## Specs
 | Spec | Input | Output |
 |-|-|-|
 | Dry up code by adding an inheritable abstract bakeryItem class that contains purely unimplemented properties and a deal method |  |  |
@@ -11,19 +20,12 @@
 | Create a special 4 for 5 on Croissants with same default price | new Croissant(9).Deal() | 12 |
 | Create a static method that returns a dictionary for each category and a corresponding dictionary for each item in that category that includes the amount ordered and the deal for each item. | getTotalsForAllOrder() | Dictionary{"Bread",Dictionary{"Brioche",[10,23]},{Zwieback, [5, 15},},{"Pastry", Dictionary{"Croissant",[5,16]}} |
 | Create a static method that return each available item inside of its category and it corresponding price/deals | CreateMenuItem() | Dictionary{{"Bread", Dictionary{{"Brioche",[multiplier,DealPrice,SingleItem],{Zwieback[multiplier,DealPrice,SingleItem]}}}, {"Pastry", Dictionary{"Cronut"[multiplier,DealPrice,SingleItem]},{"Croissant",[multiplier,DealPrice,SingleItem]}}} |
-#### _This demonstrates beginner level C# and unit testing._
 
-#### By _**Matthew**_
-
-
-## Description
-
-_A page demonstrates basic C# with a console._
-_An imaginary bakery where the user can buy items_
-
-                                  
 ## Setup/Installation Requirements
-
+* Install dotnet core from https://dotnet.microsoft.com/download
+* Clone/download the repo and type 'dotnet restore' inside of a terminal windows in the same directory of the cloned repo. 
+* Run "dotnet run" to open the program
+* Follow the instructions within the app
 ## Known Bugs
 
 _I don't think there are any bugs but please tell me if you see any._
