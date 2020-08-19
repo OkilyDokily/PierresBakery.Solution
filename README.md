@@ -11,15 +11,17 @@ _An imaginary bakery where the user can buy items_
 ## Specs
 | Spec | Input | Output |
 |-|-|-|
-| Dry up code by adding an inheritable abstract bakeryItem class that contains purely unimplemented properties and a deal method |  |  |
-| Create a bread and pastry class that are also abstract and pass default implementation to the BakerItem class via its constructor | Bread() |  |
-| Create subclasses on Bread and Pastry such as Brioche | new Brioche(),new Croissant etc | Brioche object etc |
-| Allow Order Class to add new orders  | Order.AddOrder("Croissant", 5) | Dictionary<string,int>{{"Croissant",5}} |
-| ensure subobjects call Deal correctly on subobjects that utilize default implementation for bread and pastry | new Zwiebel().Deal(amount) | 37 for ex |
-| Create a special 3 for 7 deal on Brioche with a default price of 4 | new Brioche(7).Deal() | 15 |
-| Create a special 4 for 5 on Croissants with same default price | new Croissant(9).Deal() | 12 |
-| Create a static method that returns a dictionary for each category and a corresponding dictionary for each item in that category that includes the amount ordered and the deal for each item. | getTotalsForAllOrder() | Dictionary{"Bread",Dictionary{"Brioche",[10,23]},{Zwieback, [5, 15},},{"Pastry", Dictionary{"Croissant",[5,16]}} |
-| Create a static method that return each available item inside of its category and it corresponding price/deals | CreateMenuItem() | Dictionary{{"Bread", Dictionary{{"Brioche",[multiplier,DealPrice,SingleItem],{Zwieback[multiplier,DealPrice,SingleItem]}}}, {"Pastry", Dictionary{"Cronut"[multiplier,DealPrice,SingleItem]},{"Croissant",[multiplier,DealPrice,SingleItem]}}} |
+| add new orders  | 5 zwieback | 10 zwieback |
+| return value of individual purchase of items such as brioche | brioche 2  | 8 |
+| apply a special 3 for 7 discount to a brioche order if they order 3 of them | brioche 3 | 7 |
+| Create a special 4 for 5 on Croissants with same default price | croissant 3 | 12 |
+| apply a 2 for 5 discount for any bread item  | Zwieback 2 | 5 |
+| apply a 3 for 5 discount for any Pastry item | Cronut 3 | 5 |
+| show available categories for purchase | getItemNamesAndCategories | Bread, Pastry |
+| get a total of bread items | getItemNamesAndCategories() | 35 |
+| get a total of bread items cost | getTotalsForAllOrder() | 28 |
+| get a total of any given item such as Brioche that has been purchase | getTotalsForAllOrder() | 35 |
+| get a total cost of any given item such as Brioche that has been purchased | getTotalsForAllOrder() | 405 |
 
 ## Setup/Installation Requirements
 * Install dotnet core from https://dotnet.microsoft.com/download
