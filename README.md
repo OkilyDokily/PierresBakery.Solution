@@ -11,17 +11,18 @@ _An imaginary bakery where the user can buy items_
 ## Specs
 | Spec | Input | Output |
 |-|-|-|
-| add new orders  | 5 zwieback | 10 zwieback |
-| return value of individual purchase of items such as brioche | brioche 2  | 8 |
-| apply a special 3 for 7 discount to a brioche order if they order 3 of them | brioche 3 | 7 |
-| Create a special 4 for 5 on Croissants with same default price | croissant 3 | 12 |
-| apply a 2 for 5 discount for any bread item  | Zwieback 2 | 5 |
-| apply a 3 for 5 discount for any Pastry item | Cronut 3 | 5 |
-| show available categories for purchase | getItemNamesAndCategories | Bread, Pastry |
-| get a total of bread items | getItemNamesAndCategories() | 35 |
-| get a total of bread items cost | getTotalsForAllOrder() | 28 |
-| get a total of any given item such as Brioche that has been purchase | getTotalsForAllOrder() | 35 |
-| get a total cost of any given item such as Brioche that has been purchased | getTotalsForAllOrder() | 405 |
+| add new orders  | 5 zwieback | 5 zwieback  |
+| allow user to update the same order | 10 zwieback, previous order | 15 zwieback |
+| return total value of purchase of individual items such as brioche | brioche 2  | 8 bucks |
+| return total number of items to be purchased  | 5 cronut, 10 cronut | 15 cronuts in total |
+| apply a special 3 for 7 discount to a brioche order if they order 3 of them | brioche 3 | 7 bucks |
+| Create a special 4 for 5 on Croissants with same default price | croissant 3 | 12 bucks |
+| apply a 2 for 5 discount for any bread item  | Zwieback 2 | 5 bucks |
+| apply a 3 for 5 discount for any Pastry item | Cronut 3 | 5 bucks |
+| show available categories for purchase | user opens program | list of available categories Bread, Pastry |
+| get a total of items in a category | 15 zwieback, 20 brioche | 35 items |
+| get a total cost of items in a category | 2 brioche, 2 zwieback | 13 bucks |
+| return an itemized receipt with categorized items | 5 cronut, 2 brioche | list of item no.s and costs by categories with category totals  and costs  |
 
 ## Setup/Installation Requirements
 * Install dotnet core from https://dotnet.microsoft.com/download
